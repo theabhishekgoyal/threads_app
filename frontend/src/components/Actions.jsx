@@ -27,7 +27,8 @@ const Actions = ({ post }) => {
   const [isLiking, setIsLiking] = useState(false);
   const [isReplying, setIsReplying] = useState(false);
   const [reply, setReply] = useState("");
-  const [replies, setReplies] = useState(post.replies || []); 
+  // console.log("Post replies:", post.replies);
+  const [replies, setReplies] = useState(post.replies || []);
 
   useEffect(() => {
     // Update liked state based on whether the user has liked the post or not
@@ -108,7 +109,7 @@ const Actions = ({ post }) => {
 
       const updatedPosts = posts.map((p) => {
         if (p._id === post._id) {
-          return { ...p, replies: [...(p.replies), data] }; // Ensure p.replies is initialized with an empty array if it's undefined
+          return { ...p, replies: [...p.replies, data] }; // Ensure p.replies is initialized with an empty array if it's undefined
         }
         return p;
       });
@@ -169,8 +170,7 @@ const Actions = ({ post }) => {
 
       <Flex gap={2} alignItems="center">
         <Text color={"gray.light"} fontSize="sm">
-          {(replies && replies.length) || 0} replies{" "}
-          {/* Ensure replies is defined before accessing its length */}
+          {(replies && replies.length) || 0} replies
         </Text>
         <Box w={0.5} h={0.5} borderRadius="full" bg="gray.light"></Box>
         <Text color="gray.light" fontSize="sm">

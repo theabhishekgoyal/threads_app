@@ -4,6 +4,8 @@ import useShowToast from "../hooks/useShowToast";
 import Post from "../components/Post";
 import { useRecoilState } from "recoil";
 import postsAtom from "../atoms/postsAtom";
+import SuggestedUsers from "../components/SuggestedUsers";
+import SuggestedUser from "../components/SuggestedUser";
 // import SuggestedUsers from "../components/SuggestedUsers";
 
 const HomePage = () => {
@@ -54,7 +56,7 @@ const HomePage = () => {
 					md: "block",
 				}}
 			>
-				{/* <SuggestedUsers /> */}
+				<SuggestedUsers />
 			</Box>
 		</Flex>
 	);

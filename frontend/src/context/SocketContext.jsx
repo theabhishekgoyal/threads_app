@@ -15,19 +15,25 @@ export const SocketContextProvider = ({ children }) => {
   const user = useRecoilValue(userAtom);
 
   useEffect(() => {
-    const socket = io("/", {
-      query: {
-        userId: user?._id,
-      },
-    });
+    // Only connect socket if user is logged in
+    if (user) {
+      const newSocket = io("/", {
+        query: {
+          userId: user?._id,
+        },
+      });
 
-    setSocket(socket);
+      setSocket(newSocket);
 
-    socket.on("getOnlineUsers", (users) => {
-      setOnlineUsers(users);
-    });
-    return () => socket && socket.close();
-  }, [user?._id]);
+      newSocket.on("getOnlineUsers", (users) => {
+        setOnlineUsers(users);
+      });
+
+      return () => {
+        newSocket.disconnect();
+      };
+    }
+  }, [user]);
 
   return (
     <SocketContext.Provider value={{ socket, onlineUsers }}>

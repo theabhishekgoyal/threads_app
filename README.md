@@ -27,11 +27,19 @@ This project is a clone of the Threads application, initially launched by Facebo
 
 (Include images of the login page, signup page, home page, profile page, and admin dashboard here.)
 
-![Login Page](path/to/login-page-image)
-![Signup Page](path/to/signup-page-image)
-![Home Page](path/to/home-page-image)
-![Profile Page](path/to/profile-page-image)
-![Admin Dashboard](path/to/admin-dashboard-image)
+<!-- First row -->
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://github.com/theabhishekgoyal/threads_app/assets/96344136/f6abb3ca-a8cc-4e4d-b035-d2a46fb5edd6" alt="Login Page" width="400" >
+    <img src="https://github.com/theabhishekgoyal/threads_app/assets/96344136/49f71bb8-2b6d-47a9-a071-eb6840de72b3" alt="Signup Page" width="400" >
+</div>
+
+<!-- Second row -->
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://github.com/theabhishekgoyal/threads_app/assets/96344136/df8e488d-f13e-4ba9-a4db-56102b9b4ba1" alt="Home Page" width="400" >
+    <img src="https://github.com/theabhishekgoyal/threads_app/assets/96344136/7941be9c-64c3-4f35-9950-9df98ad1ecce" alt="Profile Page" width="400" >
+    <img src="https://github.com/theabhishekgoyal/threads_app/assets/96344136/da84c005-d396-482e-8db7-08b1e59aa02d" alt="Admin Dashboard" width="400" >
+</div>
+
 
 ## Installation
 
